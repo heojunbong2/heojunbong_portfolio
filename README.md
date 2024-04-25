@@ -1,1 +1,6 @@
-# portfolio
+# Technical Portfolio
+
+졸업심사를 위한 테크니컬 포트폴리오
+
+본 레포지토리는 다음과 같은 총 3개의 결과물로 구성됨(코드 파일에 대한 설명은 각 폴더의 README.md에 있음)
+
