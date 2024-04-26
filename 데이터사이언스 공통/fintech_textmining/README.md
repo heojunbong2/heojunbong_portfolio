@@ -22,4 +22,4 @@
 
 # 3. Analaysis
 
-![image](https://github.com/heojunbong2/portfolio/assets/168062535/7743ad8d-db75-49ed-b521-a386b47150ad)
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/cd210767-21ed-4f72-bcfe-d32080afd3c8)
