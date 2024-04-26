@@ -22,3 +22,11 @@
 
 - 대회 사이트: https://www.kamp-ai.kr/
 
+# 3. Data visualization final Project
+
+- R의 ggplot2 라이브러리를 이용하여 실제득료율과 예측 득표율의 scatterplot을 시각화함
+
+# 심사항목
+- (데이터사이언스 공통) Python, SQL, R, Java, Scala, Go, C/C++, Javascript 등 데이터 처리 언어 활용 능력: 1,2,3 모두 해당됨
+- (데이터 활용 및 분석) 데이터사이언스 관련 공모전 참여를 통한 공개 데이터의 활용 및 분석 능력: 2에 해당됨
+- (데이터 시각화) R, Python, Tableau, Power BI 등을 활용한 데이터 시각화 능력: 3에 해당됨
