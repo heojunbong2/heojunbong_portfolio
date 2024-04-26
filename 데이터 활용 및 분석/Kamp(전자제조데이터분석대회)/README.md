@@ -17,3 +17,7 @@
 - F-1 Score와 AUC가 높은 XGboost model을 구축함
   
 ![image](https://github.com/heojunbong2/portfolio/assets/168062535/5f8e9828-062f-4b49-af90-4c9bd0ff7b45)
+
+# 4. 대회 관련 사이트
+
+- URL: https://www.kamp-ai.kr/main
