@@ -12,6 +12,13 @@
 
 - Python의 wordcloud 라이브러리를 이용한 각 모바일 결제 서비스 앱(카카오페이, 네이버페이, 토스) 연도별로 워드클라우드 시각화  
 
-- Python의 networkx 라이브러리를 이용한 네트워크 분석 시각화
+- Python의 networkx 라이브러리를 이용한 네트워크 분석 시각화 
 
-- Python의 gensim 라이브러리를 이용한 토픽 모델링( 정적 토픽모델링, 동적토픽모델링 )
+- Python의 gensim 라이브러리를 이용한 토픽 모델링( 정적 토픽모델링, 동적토픽모델링 ) 수행
+
+# 2. 용해탱크 제조 데이터를 이용한 용해 품질 분류기 모델
+
+- 용해탱크 제조 데이터를 이용한 용해 품질 분류 모델(로지스틱 회귀, 의사결정나무, KNN, 랜텀포레스트 모델, XGboost, Soft voting classifier, Tabnet) 구축
+
+- 대회 사이트: https://www.kamp-ai.kr/
+
