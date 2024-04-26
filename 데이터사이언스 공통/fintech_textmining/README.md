@@ -21,3 +21,5 @@
 - 워드클라우드 시각화와 네트워크 시각화를 통해 각 어플들의 부정적인 기능의 공통점을 추론하고 동적토픽모델링을 통해 어플의 부정적인 기능 중에 우선적으로 해결해야 할 기능을 추론함
 
 # 3. Analaysis
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/7743ad8d-db75-49ed-b521-a386b47150ad)
