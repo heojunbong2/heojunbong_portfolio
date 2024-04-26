@@ -1,0 +1,305 @@
+---
+title: "실제 득표율과 예측 득표율 데이터   상관관계 분석"
+subtitle: "`< 산점도를 통한 두 지표간의 상관관계분석 >`"
+author: "Heo, Jun Bong, M.S gjwnsqhd12@naver.com"
+output: 
+  ioslides_presentation:
+    logo: myRmdBeamerStyle/logo_ds.png
+    css: styles.css
+    smaller: true
+    # incremental: true
+    # transition: slower
+---
+
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(fig.align='center')
+```
+
+## Bad Visualization
+
++ Scatter Plot
+
+```{r,  echo=FALSE, out.width='100%',out.height='100%', fig.align='center'}
+include_graphics("fig/president.png")
+```
+
+## Data Generation - (1)
+
++ Code
+
+```{r}
+
+# x를 대표하는 값 임의로 뽑기
+
+  
+a<-sample(x=20:30, size=10,replace=TRUE)
+a_0.1mi<-sample(x=20:30, size=10,replace=TRUE)
+a_2plus<-sample(x=30:40, size=30,replace=TRUE)
+a_30403minus<-sample(x=30:40, size=15,replace=TRUE)
+a_30405minus<-sample(x=30:40, size=12,replace=TRUE)
+a_304010minus<-sample(x=30:40, size=5,replace=TRUE)
+a_1plus<-sample(x=40:55, size=10,replace=TRUE)
+a_2_2plus<-sample(x=40:55, size=10,replace=TRUE)
+a_5plus<-sample(x=40:55, size=10,replace=TRUE)
+a_40555minus<-sample(x=40:55,size=10,replace=TRUE)
+
+a_40553minus<-sample(x=40:55,size=10,replace=TRUE)
+a_40554minus<-sample(x=40:55,size=10,replace=TRUE)
+
+
+c<-sample(x=80:90, size=3,replace=TRUE)
+c_0.1mi<-sample(x=40:55, size=30,replace=TRUE)
+c_2plus<-sample(x=55:65, size=10,replace=TRUE)
+c_5plus<-sample(x=55:60, size=5,replace=TRUE)
+c_3plus<-sample(x=55:60, size=5,replace=TRUE)
+c_0.3plus<-sample(x=65:80, size=15,replace=TRUE)
+c_60703plus<-sample(x=65:70, size=15,replace=TRUE)
+c_60704plus<-sample(x=65:70, size=15,replace=TRUE)
+c_60705plus<-sample(x=65:70, size=15,replace=TRUE)
+c_60703minus<-sample(x=65:70, size=15,replace=TRUE)
+c_60705minus<-sample(x=65:70, size=15,replace=TRUE)
+c_607010minus<-sample(x=65:70, size=10,replace=TRUE)
+
+c_40555minus<-sample(x=45:55, size=10,replace=TRUE)
+
+c_40552minus<-sample(x=45:55, size=10,replace=TRUE)
+c_40553minus<-sample(x=45:55, size=10,replace=TRUE)
+c_40554minus<-sample(x=45:55, size=10,replace=TRUE)
+
+
+c_55655minus<-sample(x=55:65, size=10,replace=TRUE)
+
+
+```
+
+## Data Generation - (2)
+
++ Code
+
+```{r}
+
+# y를 대표하는 값 생성
+
+b_0.1<-a+1
+b_0.1mi<-a_0.1mi-1
+b_2plus<-a_2plus+2
+
+b_30403minus<-a_30403minus-3
+b_30405minus<-a_30405minus-5
+b_304010minus<-a_304010minus-10
+
+b_1plus<-a_1plus+1
+b_2_2plus<-a_2_2plus+2
+b_5plus<-a_5plus+5
+b_40555minus<-a_40555minus-5
+b_40553minus<-a_40553minus-3
+b_40554minus<-a_40554minus-4
+
+
+
+d_0.1<-c+0.1
+d_0.1mi<-c_0.1mi-0.1
+d_2plus<-c_2plus+2
+d_5plus<-c_5plus+5
+d_3plus<-c_3plus+3
+
+d_0.3plus<-c_0.3plus+0.3
+d_60703plus<-c_60703plus+3
+d_60704plus<-c_60704plus+4
+d_60705plus<-c_60705plus+5
+
+d_55655minus<-c_55655minus-5
+d_60703minus<-c_60703minus-3
+d_60705minus<-c_60705minus-5
+d_607010minus<-c_607010minus-10
+
+d_40555minus<-c_40555minus-4.5
+d_40552minus<-c_40552minus-2
+d_40553minus<-c_40553minus-3
+d_40554minus<-c_40554minus-4
+
+# 데이터 프레임 만들기
+
+data_republic<-data.frame(data_X=a,data_y=b_0.1)
+data_republic_2plus<-data.frame(data_X=a_2plus,data_y=b_2plus)
+data_republic_30403minus<-data.frame(data_X=a_30403minus,data_y=b_30403minus)
+data_republic_30405minus<-data.frame(data_X=a_30405minus,data_y=b_30405minus)
+data_republic_304010minus<-data.frame(data_X=a_304010minus,data_y=b_304010minus)
+data_republic_1plus<-data.frame(data_X=a_1plus,data_y=b_1plus)
+data_republic_2_2plus<-data.frame(data_X=a_2_2plus,data_y=b_2_2plus)
+data_republic_5plus<-data.frame(data_X=a_5plus,data_y=b_5plus)
+data_republic_40555minus<-data.frame(data_X=a_40555minus,data_y=b_40555minus)
+
+data_republic_40553minus<-data.frame(data_X=a_40553minus,data_y=b_40553minus)
+
+data_republic_40554minus<-data.frame(data_X=a_40554minus,data_y=b_40554minus)
+
+
+data_republic_mi<-data.frame(data_X=a_0.1mi,data_y=b_0.1mi)
+
+data_power<-data.frame(data_X=c,data_y=d_0.1)
+data_power_2plus<-data.frame(data_X=c_2plus,data_y=d_2plus)
+data_power_5plus<-data.frame(data_X=c_5plus,data_y=d_5plus)
+data_power_3plus<-data.frame(data_X=c_3plus,data_y=d_3plus)
+
+
+data_power_0.3plus<-data.frame(data_X=c_0.3plus,data_y=d_0.3plus)
+data_power_60703plus<-data.frame(data_X=c_60703plus,data_y=d_60703plus)
+data_power_60704plus<-data.frame(data_X=c_60704plus,data_y=d_60704plus)
+data_power_60705plus<-data.frame(data_X=c_60705plus,data_y=d_60705plus)
+
+data_power_40555minus<-data.frame(data_X=c_40555minus,data_y=d_40555minus)
+
+data_power_40552minus<-data.frame(data_X=c_40552minus,data_y=d_40552minus)
+
+data_power_40553minus<-data.frame(data_X=c_40553minus,data_y=d_40553minus)
+
+data_power_40554minus<-data.frame(data_X=c_40554minus,data_y=d_40554minus)
+
+data_power_55655minus<-data.frame(data_X=c_55655minus,data_y=d_55655minus)
+
+data_power_60703minus<-data.frame(data_X=c_60703minus,data_y=d_60703minus)
+data_power_60705minus<-data.frame(data_X=c_60705minus,data_y=d_60705minus)
+data_power_607010minus<-data.frame(data_X=c_607010minus,data_y=d_607010minus)
+data_power_mi<-data.frame(data_X=c_0.1mi,data_y=d_0.1mi)
+
+```
+
+## Data Generation - (3)
+
++ Code
+
+```{r}
+# 범례 값 생성
+
+data_republic$label='민주당'
+data_republic_mi$label='민주당'
+data_republic_2plus$label='민주당'
+data_republic_2_2plus$label='민주당'
+data_republic_1plus$label='민주당'
+data_republic_5plus$label='민주당'
+
+data_republic_30403minus$label='민주당'
+data_republic_30405minus$label='민주당'
+data_republic_304010minus$label='민주당'
+data_republic_40555minus$label='민주당'
+data_republic_40553minus$label='민주당'
+data_republic_40554minus$label='민주당'
+
+
+
+data_power$label='국민의 힘'
+data_power_mi$label='국민의 힘'
+data_power_2plus$label='국민의 힘'
+data_power_5plus$label='국민의 힘'
+data_power_3plus$label='국민의 힘'
+data_power_0.3plus$label='국민의 힘'
+
+data_power_60703plus$label='국민의 힘'
+data_power_60704plus$label='국민의 힘'
+data_power_60705plus$label='국민의 힘'
+
+data_power_55655minus$label='국민의 힘'
+
+data_power_60703minus$label='국민의 힘'
+data_power_60705minus$label='국민의 힘'
+data_power_607010minus$label='국민의 힘'
+data_power_40555minus$label='국민의 힘'
+data_power_40552minus$label='국민의 힘'
+data_power_40553minus$label='국민의 힘'
+data_power_40554minus$label='국민의 힘'
+
+# 앞서 구한 데이터 프레임 합치기 
+
+data1<-rbind(data_republic, data_republic_mi,data_republic_2plus,data_republic_2_2plus,data_republic_1plus,
+            data_republic_5plus,data_republic_30403minus,
+            data_republic_30405minus,data_republic_304010minus,data_republic_40555minus,data_republic_40553minus,
+            data_republic_40554minus)
+
+data2<-rbind(data_power, data_power_mi,data_power_2plus,data_power_5plus,
+             data_power_3plus,data_power_0.3plus,data_power_60703plus,
+             data_power_60704plus,data_power_60705plus,data_power_60703minus,
+             data_power_60705minus,data_power_607010minus,data_power_40555minus,
+             data_power_55655minus,data_power_40552minus,data_power_40553minus,
+             data_power_40554minus)
+
+data<-rbind(data1,data2)
+
+
+
+```
+
+## Data Visualization -(1)
+
++ 데이터 중첩 방지 및 XLabel, YLabel, Subtitle 추가
+
+```{r message=FALSE}
+
+library(ggrepel)
+library(ggplot2)
+fig<-ggplot(data,aes(x=data_X,y=data_y))+geom_point(aes(x=data_X,y=data_y,
+  colour=factor(label)),alpha=0.3,position='jitter',size=3)+
+  scale_colour_manual(values=c("red","blue"))+
+  coord_fixed(0.25)+
+  scale_x_continuous(breaks=seq(10,100,10),labels=seq(10,100,10))+
+  scale_y_continuous(breaks=seq(0,100,20))+
+  labs(title="실제득표율(%)과 예측 득표율(%) 상관관계 분석",
+       subtitle="<실제득표율과 예측 득표율은 매우 강한 양의 상관관계를 가지고 있다>"
+       ,x='실제 득표율(%)',y='예측 득표율(%)',
+       color='정당 이름')
+
+```
+
+## Data Visualization -(2)
+
++ 그림안에 설명 넣기
+
+```{r message=FALSE}
+
+library(dplyr)
+label<-data %>% summarise(
+  data_X=10,
+  data_y=80,
+  label="실제 득표율이 올라갈수록 예측 득표율이 \n 증가하는 경향이 있다.")
+
+fig2<-fig + theme_bw()+
+  theme(axis.text.x=element_text(size=10,face='bold',color='black'),
+    axis.text.y =element_text(size=10,face='bold',color='black'),
+    title=element_text(size=20, face='bold'))+
+  theme(plot.title=element_text(hjust=0.5),
+        plot.subtitle=element_text(hjust=0.5,size=15))+
+  geom_text(
+    data=label,
+    mapping=aes(x=data_X,y=data_y,label=label),
+    vjust='top',
+    hjust='left')
+
+```
+
+## Data Visualization -(3)
+
++ Legend 없애기
+
+```{r}
+class_avg<-data %>% group_by(label) %>%
+  summarise(data_X=median(data_X),
+            data_y=median(data_y))
+
+fig3<-fig2 + ggrepel::geom_label_repel(data=class_avg,
+    mapping=aes(label=label, color=label),
+    size=3,
+    label.size=0)+
+  theme(legend.position='none')
+```
+
+## Data Visualization - (4)
+
+```{r, echo=FALSE, out.width='100%',out.height='80%', fig.align='center'}
+include_graphics("fig/Scatterplot.png")
+```
+
+# 감사합니다.
