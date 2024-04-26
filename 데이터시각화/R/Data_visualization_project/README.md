@@ -7,3 +7,5 @@ R studio에서 R을 사용하여 실제 득표율과 예측 득표율 데이터 
 발표자료 폴더 안에 있는 html파일은 rmd 폴더 안의 .rmd 파일을 임포트하여 만든 파일이다.
 
 rmd 폴더 안의 .rmd 파일은 레포트 작성을 위한 R Markdowm 파일이다.
+
+![image1](https://github.com/heojunbong2/portfolio/assets/168062535/0208d71f-c2c1-432b-a55d-bd3bb8dd63f3)
