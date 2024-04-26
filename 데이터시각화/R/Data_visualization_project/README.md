@@ -8,4 +8,22 @@ R studio에서 R을 사용하여 실제 득표율과 예측 득표율 데이터 
 
 rmd 폴더 안의 .rmd 파일은 레포트 작성을 위한 R Markdowm 파일이다.
 
-![image1](https://github.com/heojunbong2/portfolio/assets/168062535/0208d71f-c2c1-432b-a55d-bd3bb8dd63f3)
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/771dbdfb-e197-40a1-92f8-6027fe46959c)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/9013ee3b-d86a-40d6-a35f-58eaa27da08a)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/83e7ef72-5dcb-49b7-9552-72451a4b930c)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/c0fd7c1c-5994-4b22-a896-4658b6391b54)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/8a4f0d9b-4fd5-4bdf-b799-f7c0ae46f5cd)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/1a70e71e-31e2-4d33-bd76-f73dba4d6b26)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/5e75abca-6268-46b3-bde5-65729ccc6573)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/9b51715f-7dfd-477b-bcf6-a7098c7bc88b)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/0b9d3677-074e-4b2f-b66c-c1f2a7a140cf)
+
+![image](https://github.com/heojunbong2/portfolio/assets/168062535/98b4333c-827d-4666-a64c-1ffc2d795585)
