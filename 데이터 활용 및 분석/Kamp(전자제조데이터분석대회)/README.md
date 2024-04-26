@@ -14,6 +14,6 @@
 - 여러 모델들을 구축한 다음 F-1 Score와 AUC Score가 가장 높은 모델을 선정하기
 
 # 3. Analaysis
-- XGboost 모델이 가장 최적의 모델이라고 할 수 있음
+- F-1 Score와 AUC가 높은 XGboost model을 만듬
   
 ![image](https://github.com/heojunbong2/portfolio/assets/168062535/5f8e9828-062f-4b49-af90-4c9bd0ff7b45)
